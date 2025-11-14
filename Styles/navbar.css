@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Outfit';
+    src: url('Font/Outfit-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('Font/Outfit-ExtraBold.ttf') format('truetype');
+    font-weight: 900;
+}
+
+
+* {
+    font-family: "Outfit";
+}
+
+.navbg {
+    background-color: #F0F7EE;
+}
+
+.navbar-brand {
+    font-weight: 900;
+    color: #5D737E !important;
+}
+
+.navbar-nav a {
+    font-weight: 500;
+}
