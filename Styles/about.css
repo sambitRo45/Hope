@@ -1,0 +1,103 @@
+/* ---------------- FONTS ---------------- */
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../Font/Outfit-Black.ttf') format('truetype');
+    font-weight: 700;
+}
+
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../Font/Outfit-ExtraBold.ttf') format('truetype');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'PlusJakartaSans';
+    src: url('../Font/PlusJakartaSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'PlusJakartaSans-s';
+    src: url('../Font/PlusJakartaSans-LightItalic.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face{
+  font-family:'PlusJakartaSans-sb';
+  src: url('../Font/PlusJakartaSans-SemiBoldItalic.ttf')  format('truetype');
+  font-weight: 500;
+
+}
+
+/* ---------------- GLOBAL ---------------- */
+
+body {
+    background-color: #F0F7EE;
+}
+
+/* ---------------- TEXT STYLES ---------------- */
+
+.heading {
+    font-family: 'Outfit';
+    font-weight: 900;
+    color: #87BBA2;
+}
+
+.para {
+    font-family: 'PlusJakartaSans-sb';
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* ---------------- IMAGE SLIDER ---------------- */
+
+.slider-img {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.vm-para{
+
+   font-family: 'PlusJakartaSans-s';
+   font-size:medium;
+   color: #444;
+   font-weight:bold;
+}
+
+.vision-mission{
+    font-family: 'Outfit';
+    font-weight: 900;
+    color: #87BBA2;
+
+}
+
+.carousel-img {
+    width: 100%;
+    height: 420px;       
+    object-fit: cover;   
+    border-radius: 12px;
+}
+
+/* GALLERY IMAGE CARD */
+.gallery-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;         
+    object-fit: cover;      
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.07);
+}
+
