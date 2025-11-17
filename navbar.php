@@ -11,11 +11,13 @@
 </head>
 
 <body>
+
     <!-- F0F7EE -- white
     000000 -- Black
     5D737E -- grey
     FFF07C -- yellow
     87BBA2 -- green -->
+    
     <nav class="navbar navbar-expand-lg navbg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">HOPE<span>💚</span></a>
@@ -25,10 +27,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="./home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="./about.php">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-disabled="true">Events</a>
