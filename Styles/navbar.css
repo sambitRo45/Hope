@@ -12,6 +12,7 @@
 
 * {
     font-family: "Outfit";
+    box-sizing: border-box;
 }
 
 .navbg {
@@ -26,3 +27,4 @@
 .navbar-nav a {
     font-weight: 500;
 }
+
