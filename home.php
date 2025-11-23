@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOPE - Home Page</title>
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="./Styles/home.css">
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="./Bootstrap/bootstrap.min.css">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-</head>
-
-<body>
 
     <?php include_once 'navbar.php'; ?>
 
@@ -104,10 +85,6 @@
 
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="./Bootstrap/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
+    <?php
+     include_once "footer.php";
+    ?>

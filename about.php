@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About HOPE</title>
+ <?php include_once 'navbar.php'; ?>
 
-    <link rel="stylesheet" href="./Styles/about.css">
-    <link rel="stylesheet" href="./Bootstrap/bootstrap.min.css">
-</head>
-
-<body>
-
-    <?php include_once 'navbar.php'; ?>
-
-    <!-- ABOUT HEADER -->
     <!-- ABOUT HEADER -->
 <div class="container mt-5 fade-in">
     <div class="row align-items-center">
@@ -28,7 +14,6 @@
             </p>
         </div>
 
-        <!-- CAROUSEL (RIGHT SIDE) -->
         <div class="col-md-6">
             <div id="aboutCarousel" class="carousel slide shadow rounded" data-bs-ride="carousel">
 
@@ -147,9 +132,6 @@
 
     </div>
 </div>
-
-
-    <script src="./Bootstrap/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+ <?php
+     include_once "footer.php";
+ ?>

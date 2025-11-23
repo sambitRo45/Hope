@@ -48,7 +48,7 @@
                         
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">SignUp/LogIn</a>
+                        <a class="nav-link" aria-current="page" href="login.php">SignUp/LogIn</a>
                     </li>
                 </ul>
             </div>
