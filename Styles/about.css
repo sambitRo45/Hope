@@ -1,0 +1,79 @@
+.heading {
+    font-size: 40px;
+    font-weight: 800;
+    color: #5d737e;
+    letter-spacing: 1px;
+}
+
+.para, .vm-para {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.7;
+}
+
+.carousel-img {
+    height: 330px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.card {
+    border-radius: 20px !important;
+    transition: 0.3s ease;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18) !important;
+}
+
+.gallery-card {
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.gallery-card:hover {
+    transform: scale(1.04);
+}
+
+.gallery-img {
+    height: 260px;
+    object-fit: cover;
+}
+
+.text-center.heading {
+    margin-bottom: 15px;
+}
