@@ -40,9 +40,9 @@ session_start();
                     <li class="nav-item"><a class="nav-link" href="./home.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="./about.php">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="./events.php">Events</a></li>
-                    <?php if (isset($_SESSION['id'])) { ?>
+                    <?php if (isset($_SESSION['id'])  && ($_SESSION['type'] == "volunteer"  || $_SESSION['type'] == "admin")) { ?>
                     <li class="nav-item"><a class="nav-link" href="./Ashram_available.php">Ashrams</a></li>
-                <?php
+                <?php 
                 }
                 ?>
 
