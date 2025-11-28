@@ -7,14 +7,14 @@
 
     <div class="container footer-content">
         <div class="row justify-content-center">
-            <div class="col-md-4 text-center text-md-start">
+            <div class="col-md-4 text-center text-md-start  mx-2">
                 <h5>Contact Us</h5>
                 <p class="mb-0">Mobile: +91 87683-34565</p>
                 <p class="mb-0">Email: yourhope@gmail.com</p>
             </div>
 
             <div class="col-md-4 text-center text-md-start">
-                <ul class="footer-list">
+                <ul class="footer-list mx-5">
                     <li><p class="mb-0">Providing care with dignity and love.</p></li>
                     <li><p class="mb-0">A home filled with compassion.</p></li>
                     <li><p class="mb-0">Supporting elders with respect and comfort.</p></li>
