@@ -1,7 +1,7 @@
 <?php
 include_once "navbar.php";
 include_once "dbcon.php";
-$qry = "SELECT name, message, image FROM ashram ORDER BY id DESC";
+$qry = "SELECT id, name, message, image, location FROM ashram ORDER BY id DESC";
 $stmt = $conn->prepare($qry);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -30,11 +30,12 @@ $result = $stmt->get_result();
 
                         <div class="card-body">
                             <h5 class="service-title"><?php echo $row["name"]; ?></h5>
-                            <p class="service-desc"><?php echo $row["message"]; ?></p>
+                            <p class="service-desc"><?php echo $row["location"]; ?></p>
                         </div>
 
                         <div class="p-3">
-                            <a href="#" class="btn request-btn">Request</a>
+                            <a href="a_details.php?id=<?php echo $row["id"] ?>" class="btn request-btn">Details</a>
+                            <a href="a_details.php?id=<?php echo $row["id"] ?>" class="btn request-btn">Request</a>
                         </div>
                     </div>
                 </div>

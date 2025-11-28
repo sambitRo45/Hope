@@ -15,6 +15,7 @@
             </p>
             <?php if(isset($_SESSION['id']) && $_SESSION['type'] == "ashram") { ?>
                 <a href="ashram_details.php" class="btn btn-success">Add Location</a>
+                <a href="ashram_details.php" class="btn btn-success">Service Request</a>
             <?php
             }
             ?>
