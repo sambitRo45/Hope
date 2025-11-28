@@ -3,9 +3,9 @@ $HOST = "localhost";
 $USERNAME = "root";
 $PASSWORD = "";
 $DB_NAME = "hope";
-$PORT = 3307;
+// $PORT = 3307;
 
-$conn = new mysqli($HOST, $USERNAME, $PASSWORD, $DB_NAME, $PORT);
+$conn = new mysqli($HOST, $USERNAME, $PASSWORD, $DB_NAME);
 if($conn->connect_error){
     die("Error: ".$conn->connect_error);
 }
