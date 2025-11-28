@@ -16,6 +16,8 @@ session_start();
     <link rel="stylesheet" href="./Styles/footer.css" />
     <link rel="stylesheet" href="./Styles/home.css" />
     <link rel="stylesheet" href="./Styles/about.css" />
+    <link rel="stylesheet" href="./Styles/ashram_details.css" />
+    
 </head>
 
 <body>
@@ -38,7 +40,13 @@ session_start();
                     <li class="nav-item"><a class="nav-link" href="./home.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="./about.php">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="./events.php">Events</a></li>
-                </ul>
+                    <?php if (isset($_SESSION['id'])) { ?>
+                    <li class="nav-item"><a class="nav-link" href="./Ashram_available.php">Ashrams</a></li>
+                <?php
+                }
+                ?>
+
+               </ul>
 
                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] == "volunteer") { ?>
                     <form class="search-box d-flex" role="search">
