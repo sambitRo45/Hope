@@ -3,7 +3,6 @@
  include_once "navbar.php";
  require_once "dbcon.php";
 
-// Check if user is logged in
 if (!isset($_SESSION['id'], $_SESSION['name'], $_SESSION['email'])) {
     echo "<script>
             alert('Please login first.');
@@ -16,7 +15,6 @@ $user_id = $_SESSION['id'];
 $user_name = $_SESSION['name'];
 $user_email = $_SESSION['email'];
 
-// Check if request already exists
 $check = "SELECT * FROM user_temp WHERE user_id=?";
 $stmtCheck = $conn->prepare($check);
 $stmtCheck->bind_param("i", $user_id);

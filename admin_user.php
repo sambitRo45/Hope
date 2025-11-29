@@ -5,14 +5,7 @@ require_once "dbcon.php";
 $qry = "SELECT * FROM user_temp ORDER BY user_id DESC";
 $result = $conn->query($qry);
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Pending Ashram Requests</title>
-    <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
-</head>
 
-<body class="bg-light">
 <div class="container my-5">
  <h2 class="text-center mb-4">Pending User Requests</h2>
 <table class="table table-bordered table-hover shadow">
@@ -39,5 +32,7 @@ $result = $conn->query($qry);
  </tbody>   
 </table>
 </div>
-</body>
-</html>
+<?php
+include_once "footer.php"
+?>
+
