@@ -35,7 +35,6 @@ $result = $stmt->get_result();
 
                         <div class="p-3">
                             <a href="a_details.php?id=<?php echo $row["id"] ?>" class="btn request-btn">Details</a>
-                            <a href="request.php?id=<?php echo $row["id"] ?>" class="btn request-btn">Request</a>
                         </div>
                     </div>
                 </div>
