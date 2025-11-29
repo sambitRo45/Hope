@@ -56,12 +56,12 @@
   <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="register-card shadow">
 
-      <h3 class="text-center mb-4" style="color:#5D737E;">Create Your HOPE Account</h3>
+      <h3 class="text-center mb-4 pt-5" style="color:#5D737E;">Create Your HOPE Account</h3>
 
       <form action="register.php" method="POST" onsubmit="validateForm(event)">
 
         <div class="mb-3">
-          <label class="form-label fw-semibold">Full Name</label>
+          <label class="form-label fw-semibold">Name</label>
           <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Enter full name" />
           <small class="text-danger" id="nameError"></small>
         </div>
@@ -125,7 +125,7 @@
     $res = $stmt->execute();
 
     if($res) {
-      echo "User Added Sucessful";
+      header("Location: login.php");
     }
 
   }

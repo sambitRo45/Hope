@@ -17,7 +17,7 @@ session_start();
     <link rel="stylesheet" href="./Styles/home.css" />
     <link rel="stylesheet" href="./Styles/about.css" />
     <link rel="stylesheet" href="./Styles/ashram_details.css" />
-    
+
 </head>
 
 <body>
@@ -36,59 +36,54 @@ session_start();
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links">
-                    <li class="nav-item"><a class="nav-link" href="./home.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./about.php">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./events.php">Events</a></li>
-                    <?php if (isset($_SESSION['id'])  && ($_SESSION['type'] == "volunteer"  || $_SESSION['type'] == "admin")) { ?>
-                    <li class="nav-item"><a class="nav-link" href="./Ashram_available.php">Ashrams</a></li>
-                <?php 
-                }
-                ?>
+                <ul class="navbar-nav mb-2 mb-lg-0 nav-links">
 
-               </ul>
+                    <?php if (isset($_SESSION['id']) && ($_SESSION['type'] == "volunteer" || $_SESSION['type'] == "ashram")) { ?>
+                        <li class="nav-item"><a class="nav-link" href="./home.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./about.php">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./events.php">Events</a></li>
+                    <?php } ?>
+
+                    <?php if (isset($_SESSION['id']) && ($_SESSION['type'] == "volunteer" || $_SESSION['type'] == "admin")) { ?>
+                        <li class="nav-item"><a class="nav-link" href="./Ashram_available.php">Ashrams</a></li>
+                    <?php } ?>
+
+                    <?php if (isset($_SESSION['id']) && $_SESSION['type'] == "admin") { ?>
+                        <li class="nav-item"><a class="nav-link" href="admin_ashram.php">Ashram</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">User</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Request</a></li>
+                    <?php } ?>
+                </ul>
+
 
                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] == "volunteer") { ?>
-                    <form class="search-box d-flex" role="search">
+                    <form class="search-box d-flex ms-auto me-3" role="search">
                         <input class="form-control search-input" type="search" placeholder="Search..." />
-                        <button class="btn search-btn">
-                            <i class="fas fa-search"></i>
-                        </button>
+                        <button class="btn search-btn"><i class="fas fa-search"></i></button>
                     </form>
-                <?php
-                }
-                ?>
+                <?php } ?>
 
-                <?php if (isset($_SESSION['id'])) { ?>
-                    <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <?php if (isset($_SESSION['id'])) { ?>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                                 Welcome <?php echo $_SESSION['name']; ?>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
                             </ul>
                         </li>
-                    </ul>
-                <?php
-                } else {
-                ?>
+                    <?php } else { ?>
+                        <li class="nav-item">
+                            <a class="btn login-btn" href="login.php">SignUp / LogIn</a>
+                        </li>
+                    <?php } ?>
 
-                <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
-                    <li class="nav-item ms-2">
-                        <a class="btn login-btn" href="login.php">SignUp / LogIn</a>
-                    </li>
                 </ul>
 
-                <?php
-                }
-                ?>
-                
-
-
-
-                
-
             </div>
+
         </div>
     </nav>
