@@ -1,5 +1,5 @@
 .pro-nav {
-    background: #ffffff;
+    background: #ffffff ;
     padding: 12px 0;
     font-family: 'Poppins', sans-serif;
 }
@@ -11,18 +11,18 @@
 }
 
 .pro-nav .navbar-brand span {
-    color: #27ae60;
+    color: #27ae60 ;
 }
 
 .pro-nav .nav-link {
-    color: #34495e;
+    color: #34495e ;
     font-weight: 500;
     margin-right: 18px;
     transition: color 0.2s, transform 0.2s;
 }
 
 .pro-nav .nav-link:hover {
-    color: #27ae60;
+    color: #27ae60 ;
     transform: translateY(-2px);
 }
 
@@ -34,14 +34,14 @@
 
 .search-input {
     border-radius: 25px;
-    border: 1px solid #bdc3c7;
+    border: 1px solid #bdc3c7 ;
     padding: 5px 14px;
     outline: none;
 }
 
 .search-input:focus {
-    border-color: #27ae60;
-    box-shadow: 0 0 5px rgba(39, 174, 96, 0.4);
+    border-color: #27ae60 ;
+    box-shadow: 0 0 5px rgba(39, 174, 96, 0.4) ;
 }
 
 .search-btn {
@@ -52,8 +52,8 @@
 }
 
 .login-btn {
-    background: #27ae60;
-    color: #fff;
+    background: #27ae60 ;
+    color: #fff ;
     border-radius: 25px;
     padding: 6px 18px;
     font-weight: 600;
@@ -61,5 +61,5 @@
 }
 
 .login-btn:hover {
-    background: #1e8449;
+    background: #1e8449 ;
 }
