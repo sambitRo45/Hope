@@ -97,7 +97,7 @@ include_once "navbar.php";
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Volunteer Visit Programme</h5>
+                            <h5 class="card-title">Volunteer Visit</h5>
                             <p class="card-text">College students spent a day interacting, playing games, and sharing gifts with the elders.</p>
                         </div>
                     </div>

@@ -88,7 +88,7 @@
     </div>
 
     <!-- GALLERY SECTION -->
-<div class="container mt-5 fade-in">
+<div class="container mt-5 fade-in mb-5">
     <h2 class="text-center heading">Gallery</h2>
     <p class="text-center para mb-4">Moments of care, connection, and joy</p>
 
