@@ -1,6 +1,7 @@
 <?php
-include_once "navbar.php";
-require_once "dbcon.php";
+//  session_start();
+ include_once "navbar.php";
+ require_once "dbcon.php";
 
 // Check if user is logged in
 if (!isset($_SESSION['id'], $_SESSION['name'], $_SESSION['email'])) {
