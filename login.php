@@ -1,32 +1,37 @@
 <?php
+session_start(); // MUST be first
 require_once "dbcon.php";
+
 $msg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $usertype = $_POST['usertype'];
-  
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $usertype = $_POST['usertype'];
 
-  $qry = "SELECT * FROM users WHERE email = ? AND password = ? AND type = ?";
-  $stmt = $conn->prepare($qry);
-  $stmt->bind_param("sss", $email, $password, $usertype);
-  $stmt->execute();
-  $result = $stmt->get_result();
+    $qry = "SELECT * FROM users WHERE email = ? AND password = ? AND type = ?";
+    $stmt = $conn->prepare($qry);
+    $stmt->bind_param("sss", $email, $password, $usertype);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-  if ($result->num_rows > 0) {
-    $data = $result->fetch_assoc();
-    session_start();
-    $_SESSION['name'] = $data['name'];
-    $_SESSION['email'] = $data['email'];
-    $_SESSION['id'] = $data['id'];
-    $_SESSION['type'] = $data['type'];
-    header("Location: home.php");
-  } else {
-    $msg = "Invalid Email or Password";
-  }
+    if ($result->num_rows > 0) {
+        $data = $result->fetch_assoc();
+
+        // Set session variables
+        $_SESSION['id'] = $data['id'];
+        $_SESSION['name'] = $data['name'];
+        $_SESSION['email'] = $data['email'];
+        $_SESSION['type'] = $data['type'];
+
+        header("Location: home.php");
+        exit; // Important! Stop execution
+    } else {
+        $msg = "Invalid Email or Password";
+    }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

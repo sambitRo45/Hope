@@ -50,7 +50,7 @@ session_start();
 
                     <?php if (isset($_SESSION['id']) && $_SESSION['type'] == "admin") { ?>
                         <li class="nav-item"><a class="nav-link" href="admin_ashram.php">Ashram</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">User</a></li>
+                        <li class="nav-item"><a class="nav-link" href="admin_user.php">User</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Request</a></li>
                     <?php } ?>
                 </ul>
