@@ -55,7 +55,7 @@ if($result->num_rows > 0) {
                     echo '<p class="text-muted">No requests found for this Ashram.</p>';
                 }
                 ?>
-                     <?php if($_SESSION=="volunteer"){?>
+                     <?php if($_SESSION['type']=="volunteer"){?>
                       <a href="request_form.php" class="btn btn-success mt-5">
                        Yes
                       </a>
