@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $stmt->bind_param("ss", $search_key, $search_key);
     $stmt->execute();
     $result = $stmt->get_result();
-    while ($row = $result->fetch_assoc()) {
 
 ?>
-        <div class="container">
-            <div class="row">
+    <div class="container">
+        <div class="row">
+            <?php while ($row = $result->fetch_assoc()) { ?>
                 <div class="col-md-3 mb-4 mt-4 d-flex align-items-stretch">
                     <div class="card service-card">
 
@@ -36,10 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     </div>
                 </div>
 
-            </div>
+            <?php
+            }
+            ?>
+
         </div>
+    </div>
 <?php
-    }
 }
 ?>
 

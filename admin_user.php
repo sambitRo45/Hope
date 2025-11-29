@@ -16,8 +16,7 @@ $result = $conn->query($qry);
     </style>
 </head>
 
-<body style="background-color:#f0f7ee">
-=======
+<body style="background-color:#F0F7EE">
 
 <div class="container my-5">
  <h2 class="text-center mb-4">Pending User Requests</h2>
@@ -48,7 +47,8 @@ $result = $conn->query($qry);
  </tbody>   
 </table>
 </div>
-<?php
-include_once "footer.php"
-?>
+<script src="./Bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
 

@@ -23,7 +23,7 @@ if($resultCheck->num_rows > 0){
     $stmt->bind_param("ss", $aid, $message);
 
     if($stmt->execute()){
-        echo "<script>alert('Request submitted successfully!'); window.location.href='Ashram_details.php?id=$aid';</script>";
+        echo "<script>alert('Request submitted successfully!'); window.location.href='home.php?id=$aid';</script>";
     } else {
         echo "<script>alert('Failed to submit request!');</script>";
     }
