@@ -1,4 +1,41 @@
-<?php include_once 'navbar.php' ?>
+<?php 
+include_once 'navbar.php';
+require_once "dbcon.php";
+
+$email = $_SESSION['email'];
+
+
+$checkQry = "SELECT id FROM ashram WHERE email = ?";
+$stmtCheck = $conn->prepare($checkQry);
+$stmtCheck->bind_param("s", $email);
+$stmtCheck->execute();
+$resultCheck = $stmtCheck->get_result();
+
+if($resultCheck->num_rows > 0){
+    $data = $resultCheck->fetch_assoc();
+    $aid = $data['id'];
+
+    if(isset($_POST['submit'])){
+    $message = $_POST['message'];
+
+    $insertQry = "INSERT INTO request (aid, request) VALUES (?, ?)";
+    $stmt = $conn->prepare($insertQry);
+    $stmt->bind_param("ss", $aid, $message);
+
+    if($stmt->execute()){
+        echo "<script>alert('Request submitted successfully!'); window.location.href='Ashram_details.php?id=$aid';</script>";
+    } else {
+        echo "<script>alert('Failed to submit request!');</script>";
+    }
+}
+
+} else {
+    echo "<script>alert('Ashram not found!'); window.location.href='home.php';</script>";
+    exit();
+}
+
+?>
+
 <style>
 body {
     background-image: url('./Assets/bg-pic.jpg');
@@ -25,7 +62,10 @@ body {
     <div class="card shadow-lg p-4" style="max-width: 600px; width: 100%; border-radius: 15px;">
         <h2 class="text-center mb-4 fs-1" style="color:#5D737E; font-weight:600;">Write Your Request</h2>
 
-        <form action="request.php" method="post">
+        <form action="" method="post">
+            <!-- Hidden field for Ashram ID -->
+            <input type="hidden" name="aid" value="<?php echo $aid; ?>">
+
             <div class="mb-3">
                 <textarea name="message" id="message" rows="6" class="form-control"
                 placeholder="Type your message or request here..." required
@@ -33,7 +73,7 @@ body {
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-success px-4 py-2 fw-bold" style="border-radius: 10px;">
+                <button type="submit" name="submit" class="btn btn-success px-4 py-2 fw-bold" style="border-radius: 10px;">
                     Submit Request
                 </button>
             </div>
@@ -41,4 +81,4 @@ body {
     </div>
 </div>
 
-<?php include_once 'footer.php' ?>
+<?php include_once 'footer.php'; ?>

@@ -29,8 +29,12 @@ if($result->num_rows > 0) {
                 <p><b>Pincode:</b> <?php echo $ashram['pincode'] ?></p>
                 <p><b>Message:</b> <?php echo $ashram['Message'] ?></p>
                 <p><b>Email:</b> <?php echo $ashram['email'] ?></p>
+                
                 <hr>
-                <h5 class="text-success">Requests / Requirements</h5>
+                <h5 class="text-success mb-3">Requests / Requirements</h5>
+
+                <!-- Add Request Button -->
+               
 
                 <?php
                 // Fetch requests for this Ashram
@@ -41,19 +45,28 @@ if($result->num_rows > 0) {
                 $reqResult = $reqStmt->get_result();
 
                 if($reqResult->num_rows > 0){
+                    echo "<ul class='list-group'>";
                     while($req = $reqResult->fetch_assoc()){
-                        echo $req['request'];  
+                        echo "<li class='list-group-item'>{$req['request']}</li>";
+                      
                     }
+                    echo "</ul>";
                 } else {
                     echo '<p class="text-muted">No requests found for this Ashram.</p>';
                 }
                 ?>
+            
+                      <a href="request_approve.php" class="btn btn-success mt-5">
+                       Yes
+                      </a>
+                      
             </div>
 
             <div class="col-md-6 text-center">
                 <img src="uploads/<?php echo $ashram['image']; ?>" class="img-fluid rounded-4 shadow" 
                      style="max-height:350px; object-fit:cover; width:100%;" alt="Ashram Image">
             </div>
+             
         </div>
     </div>
 </div>
