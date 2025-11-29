@@ -57,8 +57,8 @@ session_start();
 
 
                 <?php if (isset($_SESSION['id']) && $_SESSION['type'] == "volunteer") { ?>
-                    <form class="search-box d-flex ms-auto me-3" role="search">
-                        <input class="form-control search-input" type="search" placeholder="Search..." />
+                    <form action="search.php" class="search-box d-flex ms-auto me-3" role="search" method="POST">
+                        <input class="form-control search-input" type="search" placeholder="Search..." name="search_key"/>
                         <button class="btn search-btn"><i class="fas fa-search"></i></button>
                     </form>
                 <?php } ?>
