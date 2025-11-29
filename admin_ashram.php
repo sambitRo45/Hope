@@ -10,9 +10,12 @@ $result = $conn->query($qry);
 <head>
     <title>Pending Ashram Requests</title>
     <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+    <style>
+
+    </style>
 </head>
 
-<body class="bg-light">
+<body style="background-color:#F0F7EE">
 <div class="container my-5">
 
     <h2 class="text-center mb-4">Pending Ashram Requests</h2>

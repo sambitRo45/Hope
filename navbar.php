@@ -51,7 +51,6 @@ session_start();
                     <?php if (isset($_SESSION['id']) && $_SESSION['type'] == "admin") { ?>
                         <li class="nav-item"><a class="nav-link" href="admin_ashram.php">Ashram</a></li>
                         <li class="nav-item"><a class="nav-link" href="admin_user.php">User</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Request</a></li>
                     <?php } ?>
                 </ul>
 
@@ -66,7 +65,7 @@ session_start();
 
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                    <?php if (isset($_SESSION['id'])) { ?>
+                    <?php if (isset($_SESSION['id'])){ ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                                 Welcome <?php echo $_SESSION['name']; ?>
