@@ -1,7 +1,7 @@
 <?php
-//  session_start();
  include_once "navbar.php";
  require_once "dbcon.php";
+ include_once "check.php";
 
 if (!isset($_SESSION['id'], $_SESSION['name'], $_SESSION['email'])) {
     echo "<script>

@@ -1,15 +1,17 @@
+<?php 
+include_once 'navbar.php';
+include_once "check.php";
+?>
 
- <?php include_once 'navbar.php'; ?>
-
-    <!-- ABOUT HEADER -->
+<!-- ABOUT HEADER -->
 <div class="container mt-5 fade-in">
     <div class="row align-items-center">
 
         <div class="col-md-6 mb-4">
             <h2 class="heading">About HOPE</h2>
             <p class="para" style="text-align:justify;">
-                HOPE is a platform built to connect passionate volunteers with old age homes that need emotional 
-                support, companionship, and active involvement for their residents. Through HOPE, volunteers easily 
+                HOPE is a platform built to connect passionate volunteers with old age homes that need emotional
+                support, companionship, and active involvement for their residents. Through HOPE, volunteers easily
                 discover opportunities to visit, assist, and engage with senior citizens across multiple care homes.
             </p>
         </div>
@@ -47,47 +49,47 @@
 </div>
 
 
-    <!-- MISSION & VISION -->
-    <div class="container mt-5 fade-in">
-        <h2 class="text-center heading">Our Mission & Vision</h2>
-        <p class="text-center para mb-5">What drives our purpose and passion</p>
+<!-- MISSION & VISION -->
+<div class="container mt-5 fade-in">
+    <h2 class="text-center heading">Our Mission & Vision</h2>
+    <p class="text-center para mb-5">What drives our purpose and passion</p>
 
-        <div class="row justify-content-center g-4">
+    <div class="row justify-content-center g-4">
 
-            <!-- Mission Left -->
-            <div class="col-md-5 fade-in-up">
-                <div class="card p-3 shadow-sm h-100">
-                    <img src="./Assets/mission.png" class="card-img-top mx-auto" style="width:80px; height:80px;">
-                    <div class="card-body">
-                        <h5 class="fw-bold text-uppercase text-center">Mission</h5>
-                        <p class="vm-para" style="text-align:justify;">
-                            Our mission is to connect dedicated volunteers with old age homes needing support and 
-                            companionship. HOPE enables volunteers to make meaningful contributions through visits, 
-                            activities, teaching, or emotional care — enriching the lives of senior citizens.
-                        </p>
-                    </div>
+        <!-- Mission Left -->
+        <div class="col-md-5 fade-in-up">
+            <div class="card p-3 shadow-sm h-100">
+                <img src="./Assets/mission.png" class="card-img-top mx-auto" style="width:80px; height:80px;">
+                <div class="card-body">
+                    <h5 class="fw-bold text-uppercase text-center">Mission</h5>
+                    <p class="vm-para" style="text-align:justify;">
+                        Our mission is to connect dedicated volunteers with old age homes needing support and
+                        companionship. HOPE enables volunteers to make meaningful contributions through visits,
+                        activities, teaching, or emotional care — enriching the lives of senior citizens.
+                    </p>
                 </div>
             </div>
-
-            <!-- Vision Right -->
-            <div class="col-md-5 fade-in-up">
-                <div class="card p-3 shadow-sm h-100">
-                    <img src="./Assets/vision.png" class="card-img-top mx-auto" style="width:80px; height:80px;">
-                    <div class="card-body">
-                        <h5 class="fw-bold text-uppercase text-center">Vision</h5>
-                        <p class="vm-para" style="text-align:justify;">
-                            Our vision is to build a connected world where elders receive continuous love, interaction, 
-                            and care from society. HOPE aims to become India's leading volunteer-elder care network, 
-                            promoting compassion and strong community participation.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
 
-    <!-- GALLERY SECTION -->
+        <!-- Vision Right -->
+        <div class="col-md-5 fade-in-up">
+            <div class="card p-3 shadow-sm h-100">
+                <img src="./Assets/vision.png" class="card-img-top mx-auto" style="width:80px; height:80px;">
+                <div class="card-body">
+                    <h5 class="fw-bold text-uppercase text-center">Vision</h5>
+                    <p class="vm-para" style="text-align:justify;">
+                        Our vision is to build a connected world where elders receive continuous love, interaction,
+                        and care from society. HOPE aims to become India's leading volunteer-elder care network,
+                        promoting compassion and strong community participation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- GALLERY SECTION -->
 <div class="container mt-5 fade-in mb-5">
     <h2 class="text-center heading">Gallery</h2>
     <p class="text-center para mb-4">Moments of care, connection, and joy</p>
@@ -132,6 +134,6 @@
 
     </div>
 </div>
- <?php
-     include_once "footer.php";
- ?>
+<?php
+include_once "footer.php";
+?>

@@ -4,37 +4,45 @@ require_once "dbcon.php";
 
 $email = $_SESSION['email'];
 
+$approvedQry = "SELECT id FROM ashram WHERE email = ?";
+$stmtApproved = $conn->prepare($approvedQry);
+$stmtApproved->bind_param("s", $email);
+$stmtApproved->execute();
+$resApproved = $stmtApproved->get_result();
 
-$checkQry = "SELECT id FROM ashram WHERE email = ?";
-$stmtCheck = $conn->prepare($checkQry);
-$stmtCheck->bind_param("s", $email);
-$stmtCheck->execute();
-$resultCheck = $stmtCheck->get_result();
+$pendingQry = "SELECT email FROM ashram_temp WHERE email = ?";
+$stmtPending = $conn->prepare($pendingQry);
+$stmtPending->bind_param("s", $email);
+$stmtPending->execute();
+$resPending = $stmtPending->get_result();
 
-if($resultCheck->num_rows > 0){
-    $data = $resultCheck->fetch_assoc();
-    $aid = $data['id'];
+$aid = null;
+if($resApproved->num_rows > 0){
+    $aid = $resApproved->fetch_assoc()['id'];
+}
 
-    if(isset($_POST['submit'])){
-    $message = $_POST['message'];
+if(isset($_POST['submit'])){
+    if($aid === null && $resPending->num_rows > 0){
+        echo "<script>alert('Your ashram is not listed, Waiting for admin approval!'); window.location.href='home.php';</script>";
+        exit();
+    }
 
-    $insertQry = "INSERT INTO request (aid, request) VALUES (?, ?)";
-    $stmt = $conn->prepare($insertQry);
-    $stmt->bind_param("ss", $aid, $message);
+    if($aid !== null){
+        $message = $_POST['message'];
 
-    if($stmt->execute()){
-        echo "<script>alert('Request submitted successfully!'); window.location.href='home.php?id=$aid';</script>";
-    } else {
-        echo "<script>alert('Failed to submit request!');</script>";
+        $insertQry = "INSERT INTO request (aid, request) VALUES (?, ?)";
+        $stmt = $conn->prepare($insertQry);
+        $stmt->bind_param("ss", $aid, $message);
+
+        if($stmt->execute()){
+            echo "<script>alert('Request submitted successfully!'); window.location.href='home.php?id=$aid';</script>";
+        } else {
+            echo "<script>alert('Failed to submit request!');</script>";
+        }
     }
 }
-
-} else {
-    echo "<script>alert('Ashram not found!'); window.location.href='home.php';</script>";
-    exit();
-}
-
 ?>
+
 
 <style>
 body {

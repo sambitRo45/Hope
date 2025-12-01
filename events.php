@@ -1,5 +1,6 @@
 <?php
 include_once "navbar.php";
+include_once "check.php";
 ?>
 <div class="container my-3 event-card">
     <h2 class="mb-3">Upcoming Events</h2>

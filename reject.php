@@ -1,5 +1,6 @@
 <?php
 include "dbcon.php";
+include_once "check.php";
 
 $id = $_GET['id'];
 

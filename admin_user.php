@@ -1,5 +1,6 @@
 <?php
 include_once "navbar.php";
+include_once "check.php";
 require_once "dbcon.php";
 
 $qry = "SELECT * FROM user_temp ORDER BY user_id DESC";

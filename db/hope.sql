@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 29, 2025 at 04:09 PM
+-- Host: 127.0.0.1:3307
+-- Generation Time: Dec 01, 2025 at 06:36 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,8 +42,7 @@ CREATE TABLE `ashram` (
 --
 
 INSERT INTO `ashram` (`id`, `name`, `location`, `pincode`, `image`, `Message`, `email`) VALUES
-(9, 'Suvidha', 'Bhubaneswar', 789652, 'bg-pic.jpg', 'Hello i want service', 'rakesh@gmail.com'),
-(10, 'fjahdfa', 'India', 833221, 'Screenshot (75).png', 'gsfgsfss', 'rakesh@gmail.com');
+(15, 'Apna Ghar', 'Bhubaneswar', 759014, 'ashram.webp', 'We do not ask for much — only love, respect, and a little time.\r\nAt Apna Ghar, every moment shared becomes a memory treasured forever.', 'rakesh@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -78,7 +77,27 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`id`, `aid`, `request`) VALUES
-(5, 9, 'hello');
+(12, 15, 'we need blood');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `date`) VALUES
+(4, 'Partha', 'partha@gmail.com', '2025-12-02');
 
 -- --------------------------------------------------------
 
@@ -102,9 +121,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `cpassword`, `type`) VALUES
 (1, 'Sambit', 'sambit@gmail.com', '123', '123', 'admin'),
 (2, 'Manish', 'manish@gmail.com', '123', '123', 'admin'),
-(3, 'Sudhakar', 'sudhakar@gmail.com', '123', '123', 'admin'),
-(8, 'Rakesh Sahoo', 'rakesh@gmail.com', '12345', '12345', 'ashram'),
-(9, 'Partha Pratim', 'partha@gmail.com', '12345', '12345', 'volunteer');
+(13, 'Rakesh', 'rakesh@gmail.com', '12345', '12345', 'ashram'),
+(14, 'Partha', 'partha@gmail.com', '12345', '12345', 'volunteer');
 
 -- --------------------------------------------------------
 
@@ -114,8 +132,9 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `cpassword`, `type`) VAL
 
 CREATE TABLE `user_temp` (
   `user_id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `email` int(11) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -132,7 +151,8 @@ ALTER TABLE `ashram`
 -- Indexes for table `ashram_temp`
 --
 ALTER TABLE `ashram_temp`
-  ADD PRIMARY KEY (`temp_id`);
+  ADD PRIMARY KEY (`temp_id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `request`
@@ -140,6 +160,12 @@ ALTER TABLE `ashram_temp`
 ALTER TABLE `request`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `aid` (`aid`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -161,31 +187,37 @@ ALTER TABLE `user_temp`
 -- AUTO_INCREMENT for table `ashram`
 --
 ALTER TABLE `ashram`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `ashram_temp`
 --
 ALTER TABLE `ashram_temp`
-  MODIFY `temp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `temp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `user_temp`
 --
 ALTER TABLE `user_temp`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables
