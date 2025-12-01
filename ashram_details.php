@@ -1,6 +1,6 @@
 <?php
     include_once "navbar.php";
-    // $msg = ``;
+    include_once "check.php";
 ?>
 <div class="container my-5">
     <div class="row">

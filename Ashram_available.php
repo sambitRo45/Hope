@@ -1,6 +1,7 @@
 <?php
 include_once "navbar.php";
 include_once "dbcon.php";
+include_once "check.php";
 $qry = "SELECT id, name, message, image, location FROM ashram ORDER BY id DESC";
 $stmt = $conn->prepare($qry);
 $stmt->execute();

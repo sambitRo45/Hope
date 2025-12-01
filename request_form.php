@@ -1,5 +1,6 @@
 <?php 
  include_once 'navbar.php';
+ include_once "check.php";
 ?>
 <div class="container my-5">
     <div class="row">
@@ -30,13 +31,11 @@
   const dateInput = document.getElementById('date');
   const today = new Date();
 
-  // Format date as YYYY-MM-DD
   const formatDate = d => d.toISOString().split('T')[0];
 
-  // Minimum date = today
   dateInput.min = formatDate(today);
 
-  // Maximum date = today + 1 month
+
   const nextMonth = new Date();
   nextMonth.setMonth(today.getMonth() + 1);
   dateInput.max = formatDate(nextMonth);

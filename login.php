@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="login-card shadow">
 
-      <h2 class="text-center mb-4" style="color:#5D737E;">Welcome Back 💚</h2>
+      <h2 class="text-center mb-4" style="color:#5D737E;">Welcome 💚</h2>
       <p style="color: red; text-align: center; "><?php echo $msg ?></p>
 
       <form action="login.php" method="POST">
